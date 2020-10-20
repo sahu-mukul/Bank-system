@@ -1,0 +1,56 @@
+
+
+<%- include('./includes/head.ejs')%>
+
+
+
+<div class="container">
+                            
+
+            <div class="card text-center">
+                <div class="card-header">
+                 <h3> Details</h>
+                </div>
+                <div class="card-body">
+                  <div class="container">
+                  
+                   
+                    <form style="padding: 50px 0px 50px 0px">
+                      <div class="form-group">  
+                        <label for="name">Account Holder</label>
+        
+                        <input type="text-muted" class="form-control" disabled="disabled" value="<%=data[0].first_name%>">
+                      </div>
+                      <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="text-muted" class="form-control" disabled="disabled" value="<%=data[0].email_id%>">
+                      </div>
+  
+                      <div class="form-group">
+                        <label for="email">Account_Number</label>
+                        <input type="text-muted" class="form-control" disabled="disabled" value="<%=data[0].account_number%>">
+                      </div>
+                      <div class="form-group">
+                        <label for="Credits">Total Balance</label>
+                        <input type="text-muted" class="form-control" disabled="disabled" value="<%=data[0].amount%>">
+                      </div>
+                    </form>
+                  
+                 
+                  
+                  <form action="/amount" method="post">
+                    <button type="submit" class="btn btn-primary btn-block mb-3 " name="payeeid" value="<%=data[0].id%>">Transfer</button>
+                  
+                  </form>
+                  
+                  <a href="/" class="btn btn-primary btn-block mb-3">Cancel</a>
+              </div>
+               
+            </div>
+       
+
+            </div>
+  
+</div>
+
+<%- include('./includes/end.ejs') %>  

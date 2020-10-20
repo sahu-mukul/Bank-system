@@ -1,0 +1,12 @@
+
+npm-debug.log
+node_modules
+package-lock.json
+# Local development
+*.env
+*.dev
+.DS_Store
+
+# Docker
+Dockerfile
+docker-compose.yml

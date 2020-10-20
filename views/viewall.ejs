@@ -1,0 +1,55 @@
+<%- include('./includes/head.ejs')%>
+  <body>
+    <div class="row row-content">
+      <div class="container">
+        <div class="d-flex justify-content-center"><h3>User Information</h3></div>
+              <table class="table">
+                  <thead>
+                    <tr>
+                      <th scope="col">Id</th>
+                      <th scope="col">Account Holder</th>
+                      
+                      <th scop="col">Info</th>
+                      
+                    </tr>
+                  </thead>
+                  <tbody >
+                          <tr>    
+                            <% if(data.length>0){ 
+                                  
+                              for(var i = 0;i < data.length;i++) { %>                 
+                             <tr>
+                                 <td><%=(i+1)%></td>
+                                 <td><%=data[i].first_name%></td>
+                                 
+                                 
+                              <td>
+                                  
+    
+                            
+                                  <!-- Button trigger modal -->
+                                     <a href="/details/<%=data[i].id%>"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                                          Details
+                                      </button></a> 
+                                      
+                                  
+                              </td>
+  
+  
+                          </tr>
+                         <% }
+                 
+                  }else{ %>
+                      <tr>
+                         <td colspan="3">No user</td>
+                      </tr>
+                 <% } %>
+                  </tbody
+                    
+             
+              </table>
+          
+      </div>
+    </div>
+   
+    <%- include('./includes/end.ejs') %>  
